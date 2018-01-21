@@ -1,0 +1,46 @@
+.admin-content{
+  margin-left: 300px;
+  padding: 100px 20px;
+  overflow: hidden;
+  min-height: 1000px;
+  background: #f7f7f7;
+  .preview{
+    width: 137px;
+    height: auto;
+    float: left;
+    max-height: 150px;
+    margin-bottom: 5px;
+  }
+
+  form{
+    border: 1px solid #c5c9ce;
+    padding: 26px;
+    font-size: 16px;
+    background: #fdfdfd;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(141, 142, 132, 0.75);
+    -moz-box-shadow:    7px 7px 5px 0px rgba(141, 142, 132, 0.75);
+    box-shadow:         7px 7px 5px 0px rgba(141, 142, 132, 0.75);
+    input, textarea{
+      float: right;
+      width: 82%;
+      line-height: 30px;
+    }
+    .row{
+      margin-bottom: 35px;
+
+    }
+  }
+}
+tr:nth-child(n){
+  background: #bcbdb6;
+}
+
+thead > tr{
+  background-color: #e58d79!important;
+  font-weight: bold;
+}
+
+a.carousel-control span.fa{
+  position: absolute;
+  top: 50%;
+}

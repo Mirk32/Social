@@ -1,0 +1,84 @@
+
+.navbar{
+  padding: 0px;
+}
+header{
+  .container{
+    padding: 9px 0;
+  }
+  .logo{
+    height: 90px;
+    img{
+      float: left;
+      height: 60px
+    }
+    .logo-text{
+      float: right;
+      color: #fff;
+      margin-left: 5px;
+      span{
+        display: block;
+      }
+      span:nth-child(1){
+        font-size: 34px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: -3px;
+        font-family: 'Europe';
+
+      }
+      span:nth-child(2){
+        //font-size: 13px;
+        //text-transform: uppercase;
+        //margin-top: -8px;
+        //letter-spacing: 2.5px;
+        //color: #aec62c;
+        //font-weight: bold;
+        //margin-left: 2px;
+        //font-family: 'Planet';
+        //text-align: right;
+        padding-left: 3px;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-top: -8px;
+        color: #fff;
+        font-weight: bold;
+        margin-left: 2px;
+        font-family: 'Planet';
+        text-align: right;
+      }
+    }
+  }
+  .logo:hover span:nth-child(1){
+    color: #aec62c;
+  }
+  a.navbar-brand{
+    font-size: 38px;
+    //text-transform: uppercase;
+  }
+
+  a.navbar-brand::first-letter{
+    color: $section-name-background;
+    font-weight: bold;
+  }
+
+  .logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .big-logo{
+    height: 50px;
+  }
+
+  .nav li a{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Comfortaa', cursive;
+  }
+
+  ul.navbar-nav{
+    padding: 20px 0;
+  }
+}

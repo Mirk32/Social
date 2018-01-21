@@ -1,0 +1,26 @@
+<div class="nav-side-menu">
+  <div class="brand">Brand Logo</div>
+  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+  <div class="menu-list">
+
+    <ul id="menu-content" class="menu-content collapse out">
+
+      <li  data-toggle="collapse" data-target="#works" class="collapsed active">
+        <a href="#"><i class="fa fa-picture-o"></i> Портфолио <span class="arrow"></span></a>
+      </li>
+      <ul class="sub-menu collapse" id="works">
+        <li class="active"><%= link_to 'Все работы', '#' %></li>
+        <li><%= link_to 'Добывить работу', '#' %></li>
+      </ul>
+
+      <li  data-toggle="collapse" data-target="#members" class="collapsed active">
+        <a href="#"><i class="fa fa-address-card"></i> Сотрудник <span class="arrow"></span></a>
+      </li>
+      <ul class="sub-menu collapse" id="members">
+        <li class="active"><%= link_to 'Все сотрудники', '#' %></li>
+        <li><%= link_to 'Добывить сотрудника', '#' %></li>
+      </ul>
+    </ul>
+  </div>
+</div>

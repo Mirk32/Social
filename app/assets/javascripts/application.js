@@ -11,5 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
-//= require_tree .
+// require turbolinks
+//= require jquery-1.9.1.min
+//= require jquery.easing.min
+//= require ckeditor/init
+//= require main
+//= require modernizr-2.6.2-respond-1.1.0.min
+//= require scrolling-nav
+//= require bootstrap.min
+//# require scrolloverflow
+//# require jquery.fullPage
+//# require_tree .
