@@ -1,0 +1,14 @@
+<div class="row" >
+  <div class="col-sm-2 ">
+    <div class="photo-container">
+      <% def_path = '/avatars/default.png' %>
+      <div class="image-avatar bordered", style="background-image: url('<%= current_user.avatar_path || def_path %>')"></div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <%= render 'form', btn: 'Зберегти' %>
+  </div>
+</div>
+<div class="page-background" style="background-image: url('<%= random_background %>')">
+
+</div>

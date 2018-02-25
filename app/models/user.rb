@@ -5,4 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, presence: true, uniqueness: true
+  validates :first_name, :last_name, :room_number, :state_number, presence: true
+
+  def admin?
+    false
+  end
+
+  def full_name
+    "#{first_name&.capitalize} #{last_name&.capitalize}"
+  end
 end

@@ -1,0 +1,29 @@
+<table class="table table-stripped">
+  <thead>
+    <td>Подъезд</td>
+    <td>Номер квартиры</td>
+    <td>Имя</td>
+    <td>Фамилия</td>
+    <td>Email</td>
+    <td>Специализация</td>
+    <td>Номер телефона</td>
+    <td></td>
+  </thead>
+  <tbody>
+    <% @users.group_by(&:room_number).each do |row| %>
+      <% users = row.last %>
+        <% users.each do |user| %>
+        <tr>
+          <td><%= user.state_number %></td>
+          <td><%= user.room_number %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.specializations %></td>
+          <td><%= user.phone_number %></td>
+          <td></td>
+        </tr>
+        <% end %>
+    <% end %>
+  </tbody>
+</table>

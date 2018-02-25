@@ -1,0 +1,43 @@
+<div class="fluid-form-block form_block">
+  <%= form_for current_user.becomes(User) do |f| %>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :first_name, 'Iм\'я' %><br />
+            <%= f.text_field :first_name, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :last_name, 'Призвище' %><br />
+            <%= f.text_field :last_name, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :description, 'Про себе' %><br />
+            <%= f.text_area :description, rows: 10, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :phone_number, 'Мобiльний' %><br />
+            <%= f.text_field :phone_number, autofocus: true %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="field">
+            <%= f.label :room_number, 'Номер квартири' %><br />
+            <%= f.text_field :room_number, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :state_number, 'Номер пiд\'iзду' %><br />
+            <%= f.text_field :state_number, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :specializations, 'Моя спецiалiзацiя' %><br />
+            <%= f.text_field :specializations, autofocus: true %>
+          </div>
+        </div>
+      </div>
+      <%= f.submit btn, class: 'btn btn-green' %>
+  <% end %>
+</div>

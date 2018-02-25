@@ -8,4 +8,8 @@ module ApplicationHelper
   def show_footer?
     !['sign_up', 'sign_in'].include? request.original_url.split('/').last
   end
+
+  def random_background
+    '/avatars/' + Dir["public/avatars/*"].sample.split('/').last
+  end
 end

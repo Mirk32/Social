@@ -1315,3 +1315,25 @@ MAP
 h1:hover, h2:hover, h3:hover, p:hover, span:hover, button:hover{
   cursor: pointer;
 }
+
+/*--------------------------------
+IMAGES
+ */
+
+.fluid-form-block{
+  width: 100% !important;
+}
+.bordered{
+  border: 1px solid $dark-grey;
+}
+
+.image-avatar{
+  width: 250px;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  margin: 40px auto;
+  -webkit-box-shadow: 9px 9px 30px 0px rgba(50, 50, 50, 0.64);
+  -moz-box-shadow:    9px 9px 30px 0px rgba(50, 50, 50, 0.64);
+  box-shadow:         9px 9px 30px 0px rgba(50, 50, 50, 0.64);
+}

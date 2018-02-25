@@ -12,6 +12,31 @@
       </div>
 
       <div class="field">
+        <%= f.label :first_name, 'Имя' %><br />
+        <%= f.text_field :first_name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :last_name, 'Фамилия' %><br />
+        <%= f.text_field :last_name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :state_number, 'Номер подъезда' %><br />
+        <%= f.text_field :state_number, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :room_number, 'Номер квартиры' %><br />
+        <%= f.text_field :room_number, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :phone_number, 'Контактный телефон' %><br />
+        <%= f.text_field :phone_number, autofocus: true %>
+      </div>
+
+      <div class="field">
         <%= f.label :password, 'Пароль' %>
         <% if @minimum_password_length %>
             <em>(минимум <%= @minimum_password_length %> символов)</em>

@@ -1,0 +1,27 @@
+body{
+  .main-container{
+    min-height: 800px;
+    padding-top: 95px;
+    position: relative;
+  }
+.page-background{
+  height: 100%;
+}
+  .page-background {
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-size: cover;
+  }
+
+  form{
+    textarea{
+      width: 100%;
+    }
+  }
+}

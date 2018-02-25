@@ -5,8 +5,8 @@
         <a href="<%= root_path %>">
           <%= image_tag 'castle-1.png', class: 'pull-left big-logo', alt: 'Social' %>
           <div class="logo-text">
-            <span>12 Апреля</span>
-            <span>дом №3</span>
+            <span>12 Квiтня</span>
+            <span>будинок №3</span>
           </div>
         </a>
       </div>
@@ -26,19 +26,22 @@
       <div class="col-xs-0 col-sm-9 col-md-9">
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= nav_link('Главная', root_path) %></li>
-            <li><%= nav_link('О студии', '#') %></li>
-            <li><%= nav_link('Портфолио', '#') %></li>
-            <li><%= nav_link('Услуги', '#') %></li>
-            <li><%= nav_link('Новости', '#') %></li>
+            <li><%= nav_link('Головна', root_path) %></li>
+            <li><%= nav_link('О нас', '#') %></li>
+            <li><%= nav_link('Новини', '#') %></li>
+            <li><%= nav_link('Повiдомлення', '#') %></li>
             <li><%= nav_link('Контакты', '#') %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><%= link_to 'Регистрация', new_user_registration_path %></li>
                 <% if current_user %>
+                  <% if current_user.admin? %>
+                    <li><%= link_to 'Адмiнiстрування', admin_root_path %></li>
+                  <% end %>
+                    <li><%= link_to 'Налаштуванyя', edit_user_path(current_user) %></li>
                     <li><%= link_to 'Вихід', destroy_user_session_path, method: :delete %></li>
                 <% else %>
+                    <li><%= link_to 'Регiстрацiя', new_user_registration_path %></li>
                     <li><%= link_to 'Вхід', new_user_session_path %></li>
                 <% end %>
               </ul>
