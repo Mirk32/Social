@@ -8,9 +8,9 @@ namespace :user do
       state_number = n / 20 + 1
       email = Faker::Internet.email
       password = '1234567890'
-      User.create({ first_name: first_name, last_name: last_name,
-                           room_number: room_number, state_number: state_number,
-                           email: email, password: password})
+      User.create(first_name: first_name, last_name: last_name,
+                  room_number: room_number, state_number: state_number,
+                  email: email, password: password)
     end
   end
 end

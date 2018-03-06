@@ -1,0 +1,27 @@
+<div class="fluid-form-block form_block">
+  <%= form_for @post do |f| %>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="field">
+            <%= f.label :title, 'Назва' %><br />
+            <%= f.text_field :title, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :content, 'Текст' %><br />
+            <%= f.cktext_area :content, rows: 10, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :images, 'Зображення' %>
+            <%= f.file_field :images, multiple: true %>
+          </div>
+          <div class="field">
+            <%= f.label :files, 'Файлы' %>
+            <%= f.file_field :files, multiple: true %>
+          </div>
+          <div class="col-sm-offset-9 col-sm-3">
+            <%= f.submit btn, class: 'btn btn-green' %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

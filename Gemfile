@@ -5,18 +5,20 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 ruby '2.4.1'
+gem 'carrierwave'
 gem 'ckeditor'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'draper'
+gem 'font-awesome-sass', '~> 4.7.0'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 5.0'
 gem 'kaminari'
+gem 'mini_magick'
 gem 'pg'
 gem 'puma', '~> 3.7'
-gem 'font-awesome-sass', '~> 4.7.0'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
 gem 'sidekiq'
@@ -26,12 +28,12 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
-  gem 'rubocop'
-  gem 'selenium-webdriver'
-  gem 'faker'
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'rubocop'
+  gem 'selenium-webdriver'
 end
 
 group :development do

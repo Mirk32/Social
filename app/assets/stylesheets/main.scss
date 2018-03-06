@@ -1337,3 +1337,14 @@ IMAGES
   -moz-box-shadow:    9px 9px 30px 0px rgba(50, 50, 50, 0.64);
   box-shadow:         9px 9px 30px 0px rgba(50, 50, 50, 0.64);
 }
+
+.small-image-avatar{
+  width: 130px;
+  height: 130px;
+  background-position: center;
+  background-size: cover;
+  margin: 15px auto;
+  -webkit-box-shadow: 9px 9px 30px 0px rgba(50, 50, 50, 0.64);
+  -moz-box-shadow:    9px 9px 30px 0px rgba(50, 50, 50, 0.64);
+  box-shadow:         9px 9px 30px 0px rgba(50, 50, 50, 0.64);
+}

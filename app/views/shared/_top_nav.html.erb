@@ -29,7 +29,13 @@
             <li><%= nav_link('Головна', root_path) %></li>
             <li><%= nav_link('О нас', '#') %></li>
             <li><%= nav_link('Новини', '#') %></li>
-            <li><%= nav_link('Повiдомлення', '#') %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Спiлкування<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Головна', posts_path %></li>
+                <li><%= link_to 'Створити пропозицiю!', new_post_path %></li>
+              </ul>
+            </li>
             <li><%= nav_link('Контакты', '#') %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><b class="caret"></b></a>
@@ -46,7 +52,6 @@
                 <% end %>
               </ul>
             </li>
-
           </ul>
         </div>
       </div>
