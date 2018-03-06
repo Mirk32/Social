@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, ImageUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
@@ -11,14 +12,5 @@ class User < ApplicationRecord
 
   def admin?
     false
-  end
-
-  def full_name
-    "#{first_name&.capitalize} #{last_name&.capitalize}"
-  end
-
-  # TODO: : Move it to presenter
-  def user_avatar_path
-    avatar_path || '/avatars/default.png'
   end
 end
