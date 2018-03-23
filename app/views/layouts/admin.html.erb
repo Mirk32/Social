@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Primatech</title>
+  <title>Social</title>
   <%= csrf_meta_tags %>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <!-- Custom Fonts & Icons -->
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto" rel="stylesheet">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Use the title from a page's frontmatter if it has one -->
-  <title><%= "Primatech" %></title>
 </head>
 
 <body>
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
-<div class="">
-  <div class="left-menu">
-    <%= render 'shared/admin/left_menu' %>
-  </div>
-  <div class="admin-content">
+<%= render 'shared/top_nav'%>
+<div class="main-container">
+  <div class="container">
+    <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
+    <% if alert %><div class="alert alert-warning"><%= alert %></div><% end %>
     <% if flash[:success] %><div class="alert alert-success"><%= flash[:success] %></div><% end %>
     <% if flash[:danger] %><div class="alert alert-danger"><%= flash[:danger] %></div><% end %>
     <%= yield %>
   </div>
 </div>
+<%= render 'shared/footer' if show_footer?%>
 </body>
 </html>

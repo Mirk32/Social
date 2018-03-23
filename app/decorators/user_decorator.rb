@@ -6,6 +6,6 @@ class UserDecorator < ApplicationDecorator
   end
 
   def user_avatar_path
-    avatar&.url|| '/avatars/default.png'
+    avatar&.url || '/avatars/default.png'
   end
 end

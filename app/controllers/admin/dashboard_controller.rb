@@ -1,5 +1,7 @@
 module Admin
   class DashboardController < AdminController
-    def index; end
+    def index
+      @user = current_user.decorate
+    end
   end
 end

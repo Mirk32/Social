@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :check_post_author, only: %i[edit]
+  before_action :check_user, only: %i[new create edit]
   def index
     @posts = Post.all
   end
@@ -18,6 +20,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def my_posts
+    @posts = current_user.posts
+  end
+
+  def edit; end
+
   def show
     @post = Post.find(params[:id])
   end
@@ -26,5 +34,16 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content, images: [], files: [])
+  end
+
+  def check_post_author
+    @post = Post.find(params[:id])
+    return if current_user == @post.user
+    redirect_to posts_path
+  end
+
+  def check_user
+    return if current_user
+    redirect_to root_path
   end
 end
