@@ -1,10 +1,15 @@
 <div class="row">
   <div class="col-sm-offset-3 col-sm-6">
+    <% if @posts.count.zero? %>
+        <h1>
+          Ви не створили жодного запису, поки що :)
+        </h1>
+    <% end %>
     <% @posts.each do |post| %>
       <div class="row">
         <div class="col-sm-12 post-block">
           <div class="col-sm-2 avatar">
-            <div class="small-image-avatar bordered", style="background-image: url('<%= current_user.decorate.user_avatar_path %>')"></div>
+            <div class="small-image-avatar bordered", style="background-image: url('<%= current_user.becomes(User).decorate.user_avatar_path %>')"></div>
             <%= link_to 'Редагувати', edit_post_path(post), class: 'btn btn-green' %>
           </div>
           <div class="col-sm-10 col-sm-offset-0">

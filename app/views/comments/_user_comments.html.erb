@@ -1,0 +1,20 @@
+<% @comments.each do |comment| %>
+    <div class="row comment">
+      <div class="col-sm-1">
+        <div class="super-small-image-avatar bordered", style="background-image: url('<%= comment.user.becomes(User).decorate.user_avatar_path %>')"></div>
+        <span><%= comment.user.decorate.full_name %></span>
+      </div>
+      <div class="col-sm-11 content">
+        <p><%= comment.content %></p>
+      </div>
+      <div class="row">
+        <div class="col-sm-offset-10 col-sm-2">
+          <% if comment.user == current_user %>
+              <span><%= link_to 'Edit', edit_comment_path(comment), class: 'btn btn-info' %></span>
+              <span><%= link_to 'Delete', comment_path(comment), method: :delete, class: 'btn btn-danger',
+                                data: {confirm: "Вы уверены что хотите удалить комментарий -  #{comment.id}?"}%></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+<% end %>

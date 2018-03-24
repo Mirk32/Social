@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :check_post_author, only: %i[edit]
   before_action :check_user, only: %i[new create edit]
   def index
-    @posts = Post.all
+    @posts = Post.all.order(:created_at).reverse
   end
 
   def new
@@ -20,6 +20,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def update
+    @post = current_user.posts.find(params[:id])
+    if @post.update(post_params)
+      flash[:success] = 'Даннi збережено успiшно!'
+    else
+      flash[:danger] = 'Даннi не збережено! - ' + @post.errors.full_messages.to_s
+    end
+    redirect_to my_posts_path
+  end
+
   def my_posts
     @posts = current_user.posts
   end
@@ -28,6 +38,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.order(:created_at).reverse
   end
 
   private

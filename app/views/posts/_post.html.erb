@@ -2,11 +2,16 @@
   <div class="col-sm-12 post-block">
     <div class="col-sm-2 avatar">
       <div class="small-image-avatar bordered", style="background-image: url('<%= post.user.becomes(User).decorate.user_avatar_path %>')"></div>
-      <%= link_to 'Читати', post_path(post), class: 'btn btn-green' %>
+      <p><%= post.user.becomes(User).decorate.full_name %></p>
+      <%= link_to 'Переглянути', post_path(post), class: 'btn btn-green' %>
+
     </div>
     <div class="col-sm-10 col-sm-offset-0">
       <div class="row title">
-        <%= post.title %>
+        <span class="name"><%= post.title %></span>
+        <div class="span pull-right">
+          <%= post.created_at.strftime('%Y-%m-%d') %>
+        </div>
       </div>
       <div class="row content">
         <%= post.content.html_safe %>

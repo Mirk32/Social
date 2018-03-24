@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]).becomes(User)
     if @user.update(user_params)
       flash[:notice] = 'Даннi збережено успiшно!'
     else

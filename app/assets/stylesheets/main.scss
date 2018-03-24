@@ -1348,3 +1348,23 @@ IMAGES
   -moz-box-shadow:    9px 9px 30px 0px rgba(50, 50, 50, 0.64);
   box-shadow:         9px 9px 30px 0px rgba(50, 50, 50, 0.64);
 }
+
+.super-small-image-avatar{
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-size: cover;
+  margin: 15px auto;
+  -webkit-box-shadow: 9px 9px 30px 0px rgba(50, 50, 50, 0.64);
+  -moz-box-shadow:    9px 9px 30px 0px rgba(50, 50, 50, 0.64);
+  box-shadow:         9px 9px 30px 0px rgba(50, 50, 50, 0.64);
+}
+
+.comment{
+  background: #dfdfdf;
+  margin-top: 10px;
+  padding: 10px;
+  .content{
+    padding:10px;
+  }
+}

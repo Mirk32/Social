@@ -28,13 +28,13 @@ body{
 
   .post-block{
     border: 2px solid #b3be7b;
-    height: 250px;
+    height: 270px;
     overflow: hidden;
     margin-top: 20px;
     .row{
       padding: 5px;
     }
-    .title{
+    .title .name{
       font-size: 22px;
       font-weight: bold;
 
@@ -53,8 +53,17 @@ body{
     display: block;
     height: 50px;
     position: relative;
-    top: 200px;
+    top: 220px;
     background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 75%)
   }
 }
 
+.files{
+  border: 1px solid #aec62c;
+  background: #cce838;
+  margin-left: 14px;
+}
+
+.carousel-inner{
+  //height: 400px;
+}
