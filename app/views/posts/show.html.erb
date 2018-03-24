@@ -12,16 +12,17 @@
   <div class="col-sm-4">
     <div class="row">
       <div class="col-sm-12">
+        <% unless @post.images.count.zero? %>
         <div class="product-image-large">
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
               <% @post.images.each_with_index do |image, i| %>
-                  <div class="item <%= 'active' if i == 0 %>">
-                    <a href="<%= image.url %>" target="_blank">
-                      <%= image_tag image.url, alt: '' %>
-                    </a>
-                  </div>
+                <div class="item <%= 'active' if i == 0 %>">
+                  <a href="<%= image.url %>" target="_blank">
+                    <%= image_tag image.url, alt: '' %>
+                  </a>
+                </div>
               <% end %>
             </div>
             <!-- Controls -->
@@ -33,6 +34,7 @@
             </a>
           </div>
         </div>
+        <% end %>
       </div>
       <!-- End Product Image & Available Colors -->
     </div>
@@ -48,29 +50,16 @@
 </div>
 
 <hr>
-<div class="row">
-  <div class="col-sm-offset-2 col-sm-6">
-    <h3>Коментарi</h3>
-    <% if current_user %>
-        <div class="row">
-          <div class="col-sm-1">
-            <div class="super-small-image-avatar bordered", style="background-image: url('<%= current_user.becomes(User).decorate.user_avatar_path %>')"></div>
-            <span><%= current_user.becomes(User).decorate.full_name %></span>
-          </div>
-          <div class="col-sm-11">
-            <%= form_tag(controller: 'comments', action: 'create') do %>
-                <%= hidden_field_tag :post_id, @post.id %>
-                <%= text_area_tag :content %>
-                <%= submit_tag 'Додати' , class: 'btn'%>
-            <% end %>
-          </div>
-        </div>
-    <% end %>
-    <% if @comments.count.zero? %>
-      <h4>Жодного коментаря, поки що :)</h4>
-    <% else %>
-      <%= render 'comments/user_comments' %>
-    <% end %>
+<% unless @post.news? %>
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-6">
+      <h3>Коментарi</h3>
+        <%= render 'comments/create' %>
+      <% if @comments.count.zero? %>
+        <h4>Жодного коментаря, поки що :)</h4>
+      <% else %>
+        <%= render 'comments/user_comments' %>
+      <% end %>
+    </div>
   </div>
-</div>
-
+<% end %>

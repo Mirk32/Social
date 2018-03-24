@@ -2,6 +2,12 @@
   <%= form_for @post do |f| %>
       <div class="row">
         <div class="col-sm-12">
+          <% if current_user.admin? %>
+              <div class="field">
+                <%= f.label :post_type, 'Тип' %><br />
+                <%= f.select :post_type, [['Post', 'Post'], ['News', 'News']], autofocus: true %>
+              </div>
+          <% end %>
           <div class="field">
             <%= f.label :title, 'Назва' %><br />
             <%= f.text_field :title, autofocus: true %>

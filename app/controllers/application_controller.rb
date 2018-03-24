@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
     return admin_root_path if resource.admin?
     root_path
   end
+
+  def admin_only
+    redirect_to root_path unless current_user.admin?
+  end
 end

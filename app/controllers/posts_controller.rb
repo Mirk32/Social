@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :check_post_author, only: %i[edit]
   before_action :check_user, only: %i[new create edit]
   def index
-    @posts = Post.all.order(:created_at).reverse
+    @posts = Post.all.regular_posts.order(:created_at).reverse
   end
 
   def new
@@ -37,14 +37,18 @@ class PostsController < ApplicationController
   def edit; end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id]).decorate
     @comments = @post.comments.order(:created_at).reverse
+  end
+
+  def news
+    @news = Post.news.order(:created_at).reverse
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, images: [], files: [])
+    params.require(:post).permit(:title, :content, :post_type, images: [], files: [])
   end
 
   def check_post_author

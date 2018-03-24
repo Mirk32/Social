@@ -8,6 +8,7 @@ class Posts < ActiveRecord::Migration[5.1]
       t.float :rating
       t.json :images
       t.json :files
+      t.string :post_type
 
       t.timestamps
     end
