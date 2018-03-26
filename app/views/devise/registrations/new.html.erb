@@ -1,7 +1,7 @@
 <div class="row"></div>
 <div class="container login-block">
   <div class="lock">
-    <h2>Регистрация</h2>
+    <h2>Регiстрацiя</h2>
     <i class="fa fa-users" aria-hidden="true"></i>
   </div>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -12,27 +12,27 @@
       </div>
 
       <div class="field">
-        <%= f.label :first_name, 'Имя' %><br />
+        <%= f.label :first_name, 'Iм\'я' %><br />
         <%= f.text_field :first_name, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :last_name, 'Фамилия' %><br />
+        <%= f.label :last_name, 'Призвище' %><br />
         <%= f.text_field :last_name, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :state_number, 'Номер подъезда' %><br />
+        <%= f.label :state_number, 'Номер под\'iзда' %><br />
         <%= f.text_field :state_number, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :room_number, 'Номер квартиры' %><br />
+        <%= f.label :room_number, 'Номер квартири' %><br />
         <%= f.text_field :room_number, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :phone_number, 'Контактный телефон' %><br />
+        <%= f.label :phone_number, 'Контактний телефон' %><br />
         <%= f.text_field :phone_number, autofocus: true %>
       </div>
 
@@ -45,12 +45,12 @@
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation, 'Пароль еще раз' %><br />
+        <%= f.label :password_confirmation, 'Пароль ще раз' %><br />
         <%= f.password_field :password_confirmation, autocomplete: 'off' %>
       </div>
 
       <div class="actions">
-        <%= f.submit 'Регистрация', class: 'btn btn-green' %>
+        <%= f.submit 'Регiстрацiя', class: 'btn btn-green' %>
       </div>
   <% end %>
 
