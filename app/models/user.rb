@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def admin?
     false
   end
+
+  def confirmation_required?
+    false
+  end
 end
