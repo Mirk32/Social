@@ -25,7 +25,7 @@
 #ignores local ENV VARIABLES
 
 /public/tmp/
-#/public/uploads/
+/public/uploads/
 public/assets/
 /public/sitemaps/
 
