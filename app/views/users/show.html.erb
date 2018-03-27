@@ -47,7 +47,7 @@
   <div class="row user-info">
     <p><b>Про себе</b></p>
     <p>
-      <%= @user.description.present? ? @user.description : 'Нiчого.............' %>
+      <%= @user.description.present? ? @user.description.html_safe : 'Нiчого.............' %>
     </p>
   </div>
 </div>
