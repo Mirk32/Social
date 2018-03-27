@@ -7,4 +7,8 @@ class PostDecorator < ApplicationDecorator
   def news?
     self.post_type == 'News'
   end
+
+  def author
+    user.decorate.full_name
+  end
 end

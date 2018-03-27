@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  def edit
-    @user = User.find(params[:id]).decorate
-  end
+  before_action :for_current_user_only, only: %i[edit]
+  def edit; end
 
   def update
     @user = User.find(params[:id]).becomes(User)
@@ -14,7 +13,16 @@ class UsersController < ApplicationController
     redirect_to edit_user_path(@user)
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
+
+  def for_current_user_only
+    @user = User.find(params[:id]).decorate
+    redirect_to root_path if @user != current_user
+  end
 
   def user_params
     params.require(:user).permit(:avatar, :first_name, :last_name, :description, :phone_number,

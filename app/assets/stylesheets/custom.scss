@@ -59,7 +59,7 @@ body{
 }
 
 .news-block{
-
+  color: $brown;
   height: 230px;
   overflow: hidden;
   margin-top: 20px;
@@ -110,4 +110,24 @@ body{
 .page-title{
   color: $grey;
   font-weight: bold;
+}
+
+.user-info{
+  margin-top: 12px;
+  p, b{
+    font-size: 20px;
+  }
+}
+
+.info-page{
+  margin-top: 25px;
+}
+
+.content{
+  margin-top: 16px;
+  font-size: 20px;
+}
+
+.title{
+  color: $brown;
 }

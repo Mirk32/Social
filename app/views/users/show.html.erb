@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 ">
+      <h1><b><%= @user.becomes(User).decorate.full_name %></b></h1>
+    </div>
+  </div>
+  <div class="row info-page">
+    <div class="col-sm-3 ">
+      <div class="small-image-avatar bordered", style="background-image: url('<%= @user.becomes(User).decorate.user_avatar_path %>')"></div>
+    </div>
+    <div class="col-sm-2 user-info">
+      <p>
+        <b>Телефон</b>
+      </p>
+      <p>
+        <b>Подьезд</b>
+      <p>
+        <b>Квартира</b>
+      </p>
+      <p>
+        <b>Спецiалiзацiя</b>
+      </p>
+      <p>
+        <b>Публiкацii</b>
+      </p>
+    </div>
+    <div class="col-sm-3 user-info">
+      <p>
+        <span><%= @user.phone_number %></span>
+      </p>
+      <p>
+        <span><%= @user.state_number %></span>
+      <p>
+        <span><%= @user.room_number %></span>
+      </p>
+      <p>
+        <span><%= @user.specializations || 'Вiдсутня'%></span>
+      </p>
+      <p>
+        <% @user.posts.each do |post| %>
+            <span><%= link_to post.title, post_path(post), target: '_blank' %> / </span>
+        <% end %>
+      </p>
+    </div>
+
+  </div>
+  <div class="row user-info">
+    <p><b>Про себе</b></p>
+    <p>
+      <%= @user.description.present? ? @user.description : 'Нiчого.............' %>
+    </p>
+  </div>
+</div>
