@@ -5,7 +5,7 @@ class PostDecorator < ApplicationDecorator
   end
 
   def news?
-    self.post_type == 'News'
+    post_type == 'News'
   end
 
   def author

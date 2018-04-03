@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :comments
 
-
   namespace :admin do
     root to: 'dashboard#index'
     resources :users, only: [:index]

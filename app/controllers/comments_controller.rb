@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @comment = current_user.becomes(User).comments.build({ content: params[:content], post_id: params[:post_id] })
+    @comment = current_user.becomes(User).comments.build(content: params[:content], post_id: params[:post_id])
     if @comment.save
       flash[:success] = 'Даннi збережено успiшно!'
     else
