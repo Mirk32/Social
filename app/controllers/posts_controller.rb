@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params.merge(rating: 3))
+    @post.post_type = 'Post' unless post_params[:post_type]
     if @post.save
       flash[:success] = 'Даннi збережено успiшно!'
       redirect_to posts_path
