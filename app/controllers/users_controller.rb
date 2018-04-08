@@ -5,6 +5,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id]).becomes(User)
+    @user.social_links = {
+      facebook: params[:facebook],
+      twitter: params[:twitter],
+      instagram: params[:instagram]
+    }
     if @user.update(user_params)
       flash[:notice] = 'Даннi збережено успiшно!'
     else

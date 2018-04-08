@@ -18,6 +18,14 @@
             <%= f.label :last_name, 'Призвище' %><br />
             <%= f.text_field :last_name, autofocus: true %>
           </div>
+          <div class="field">
+            <%= f.label :specializations, 'Моя спецiалiзацiя' %><br />
+            <%= f.text_field :specializations, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :phone_number, 'Мобiльний' %><br />
+            <%= f.text_field :phone_number, autofocus: true %>
+          </div>
         </div>
         <div class="col-sm-6">
           <div class="field">
@@ -29,12 +37,16 @@
             <%= f.text_field :state_number, autofocus: true %>
           </div>
           <div class="field">
-            <%= f.label :specializations, 'Моя спецiалiзацiя' %><br />
-            <%= f.text_field :specializations, autofocus: true %>
+            <%= label_tag :facebook, 'Facebook' %><br />
+            <%= text_field_tag :facebook, current_user.social_links['facebook'].to_s %>
           </div>
           <div class="field">
-            <%= f.label :phone_number, 'Мобiльний' %><br />
-            <%= f.text_field :phone_number, autofocus: true %>
+            <%= label_tag :twitter, 'Twitter' %><br />
+            <%= text_field_tag :twitter, current_user.social_links['twitter'] %>
+          </div>
+          <div class="field">
+            <%= label_tag :instagram, 'Instagram' %><br />
+            <%= text_field_tag :instagram, current_user.social_links['instagram'] %>
           </div>
         </div>
         <div class="col-sm-12">
@@ -43,6 +55,7 @@
             <%= f.cktext_area :description, rows: 10, autofocus: true %>
           </div>
         </div>
+
       </div>
       <%= f.submit btn, class: 'btn btn-green' %>
   <% end %>

@@ -10,18 +10,21 @@
     </div>
     <div class="col-sm-2 user-info">
       <p>
-        <b>Телефон</b>
+        <b>Телефон:</b>
       </p>
       <p>
-        <b>Подьезд</b>
+        <b>Пiд'iзд:</b>
       <p>
-        <b>Квартира</b>
+        <b>Квартира:</b>
       </p>
       <p>
-        <b>Спецiалiзацiя</b>
+        <b>Спецiалiзацiя:</b>
       </p>
       <p>
-        <b>Публiкацii</b>
+        <b>Публiкацii:</b>
+      </p>
+      <p>
+        <b>Соцiальнi мережi:</b>
       </p>
     </div>
     <div class="col-sm-3 user-info">
@@ -41,13 +44,24 @@
             <span><%= link_to post.title, post_path(post), target: '_blank' %> / </span>
         <% end %>
       </p>
+      <p>
+        <% if @user.social_links['facebook'] %>
+            <span><%= link_to 'Facebook', @user.social_links['facebook'], target: '_blank' %></span><br>
+        <% end %>
+        <% if @user.social_links['twitter'].present? %>
+            <span><%= link_to 'Twitter', @user.social_links['twitter'], target: '_blank' %></span><br>
+        <% end %>
+        <% if @user.social_links['instagram'].present? %>
+            <span><%= link_to 'Instagram', @user.social_links['instagram'], target: '_blank' %></span><br>
+        <% end %>
+      </p>
     </div>
 
   </div>
   <div class="row user-info">
-    <p><b>Про себе</b></p>
+    <p><b>Про себе:</b></p>
     <p>
-      <%= @user.description.present? ? @user.description.html_safe : 'Нiчого.............' %>
+      <%= @user.description.present? ? @user.description.html_safe : 'Поки що нiчого.............' %>
     </p>
   </div>
 </div>

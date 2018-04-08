@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324174002) do
+ActiveRecord::Schema.define(version: 20180408163011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "comments", force: :cascade do |t|
     t.bigint "user_id"
@@ -66,9 +67,11 @@ ActiveRecord::Schema.define(version: 20180324174002) do
     t.integer "state_number"
     t.integer "room_number"
     t.string "specializations"
+    t.hstore "social_links"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["social_links"], name: "index_users_on_social_links", using: :gin
   end
 
 end
