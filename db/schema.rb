@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20180408163011) do
     t.integer "state_number"
     t.integer "room_number"
     t.string "specializations"
-    t.hstore "social_links"
+    t.hstore "social_links", default: {}
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
