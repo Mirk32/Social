@@ -14,7 +14,7 @@
           </div>
           <div class="field">
             <%= f.label :content, 'Текст' %><br />
-            <%= f.cktext_area :content, rows: 10, autofocus: true %>
+            <%= f.cktext_area :content, rows: 10, autofocus: true, ckeditor: { toolbar: 'mini' } %>
           </div>
           <div class="field">
             <%= f.label :images, 'Зображення' %>

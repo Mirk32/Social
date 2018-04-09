@@ -52,7 +52,7 @@
         <div class="col-sm-12">
           <div class="field">
             <%= f.label :description, 'Про себе' %><br />
-            <%= f.cktext_area :description, rows: 10, autofocus: true %>
+            <%= f.cktext_area :description, rows: 10, autofocus: true, ckeditor: { toolbar: 'micro' } %>
           </div>
         </div>
 

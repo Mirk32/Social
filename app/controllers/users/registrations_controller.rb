@@ -2,7 +2,7 @@ module Users
   class RegistrationsController < Devise::RegistrationsController
     private
 
-    def after_sign_up_path_for(resource)
+    def after_sign_up_path_for(_resource)
       edit_user_path(current_user)
     end
 
