@@ -35,17 +35,27 @@ body{
     .row{
       padding: 5px;
     }
-    .title .name{
-      font-size: 22px;
-      font-weight: bold;
-
+    .title {
+      div{
+        color: #aec62c;
+        font-weight: bold;
+      }
+      .name{
+        font-size: 22px;
+        font-weight: bold;
+      }
     }
+
     .content{
       position: relative;
     }
     .avatar{
       .btn{
         width: 100%;
+      }
+      p{
+        text-align: center;
+        font-weight: bold;
       }
     }
   }
