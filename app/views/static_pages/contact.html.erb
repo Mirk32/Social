@@ -3,6 +3,10 @@
     <h1 class="'page-title">Контакти</h1>
   </div>
   <br>
+  <% if current_user %>
+    <%= link_to 'Мешканцi нашого будинку', users_path %>
+  <% end %>
+
   <div class="row">
     <div class="col-sm-6">
       <p class="contact">
@@ -17,21 +21,6 @@
        <b>1-ий під'їзд</b><br>
         <p>Михайло Олександрович<br>
         +38 093 7838786</p>
-      </div>
-      <div class="row">
-        <br><br><b>2-ий під'їзд</b><br>
-        <p>...<br>
-          +380999999999</p>
-      </div>
-      <div class="row">
-        <br><br><b>3-iй під'їзд</b><br>
-        <p>...<br>
-          +380999999999</p>
-      </div>
-      <div class="row">
-        <br><br><b>4-ий під'їзд</b><br>
-        <p>...<br>
-          +380999999999</p>
       </div>
       <div class="row">
         <br><br><b>5-ий під'їзд</b><br>

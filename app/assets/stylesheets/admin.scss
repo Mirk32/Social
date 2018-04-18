@@ -31,13 +31,34 @@
     }
   }
 }
-tr:nth-child(n){
-  background: #bcbdb6;
+.table-stripped{
+  margin-top: 40px;
+  a{
+    font-weight: bold;
+  }
+  tbody{
+    tr td{
+      font-size: 16px;
+      padding: 10px;
+    }
+    tr:hover{
+      cursor: pointer;
+    }
+    tr:nth-child(n){
+      background: #dbdecc;
+    }
+    tr:nth-child(2n){
+      background: #96bd59;
+    }
+  }
+
 }
 
+
 thead > tr{
-  background-color: #e58d79!important;
+  background-color: #a6cf50 !important;
   font-weight: bold;
+  font-size: 18px;
 }
 
 a.carousel-control span.fa{

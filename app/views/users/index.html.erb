@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-stripped">
+      <thead>
+      <td>Подъезд</td>
+      <td>№ Квартиры</td>
+      <td>Имя</td>
+      <td>Фамилия</td>
+      <td>Email</td>
+      <td>Специализация</td>
+      <td>Номер телефона</td>
+      <td></td>
+      </thead>
+      <tbody>
+      <% @users.group_by(&:room_number).each do |row| %>
+        <% users = row.last %>
+        <% users.each do |user| %>
+          <tr>
+            <td><%= user.state_number %></td>
+            <td><%= user.room_number %></td>
+            <td><a href="<%= user_path(user)%>"><%= user.first_name %></a></td>
+            <td><a href="<%= user_path(user)%>"><%= user.last_name %></a></td>
+            <td><a href="<%= user_path(user)%>"><%= user.email %></a></td>
+            <td><%= user.specializations %></td>
+            <td><%= user.phone_number %></td>
+            <td></td>
+          </tr>
+          <% end %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

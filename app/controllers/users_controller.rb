@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   before_action :for_current_user_only, only: %i[edit]
   def edit; end
 
+  def index
+    @users = User.all
+  end
+
   def update
     @user = User.find(params[:id]).becomes(User)
     @user.social_links = {
